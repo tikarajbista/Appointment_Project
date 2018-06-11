@@ -1,0 +1,41 @@
+<br>
+<form (submit)="onSearch()">
+  <div class="form-group" class="row">
+    <div class=" form column col-10 ">
+        <input type="text" [(ngModel)]="place" name="place" class="form-control" placeholder="Please type to search">
+    </div>
+    <div class="column col-2 ">
+        <input type="submit" class="btn btn-primary glyphicon glyphicon-search" value="Search">
+    </div>
+    </div>
+</form>
+
+<br>
+<div class='table-responsive table-striped '>
+    <table class='table' *ngIf='appointments && appointments.length'>
+        <thead>
+            <tr>
+                <th> DATE</th>
+                <th> TIME</th>
+                <th> DESCRIPTION</th>
+            </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor='let appointment of appointments'>
+                      <td>
+                             {{appointment.date | date}}
+                      </td>
+                      <td>
+                              {{appointment.time}}
+                      </td>
+                      <td>
+                              {{appointment.desc}}
+                      </td>
+                  </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+
+

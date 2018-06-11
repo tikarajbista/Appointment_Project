@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* path relative to node modules */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body
+{
+    background-color: azure;
+    padding: 20px;
+}
+
+.btn-primary
+{
+   margin-left:20px;
+}

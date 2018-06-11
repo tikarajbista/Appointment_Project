@@ -1,0 +1,49 @@
+
+
+<div class="col-md-10 col-md-offset-1 margin-bottom-20" *ngIf='message && showForm'>
+     <div class="row alert alert-info alert-dismissible">
+            <h6>{{message | uppercase}}</h6>
+           
+    </div> 
+  </div>
+  <br/>
+  <div class="col-md-10 col-md-offset-1 margin-bottom-20">
+    <div class="row">
+      <div id="divNew" class="margin-bottom-20" *ngIf='!showForm'>
+              <button id="btnNew" class="btn btn-primary" (click)='toggleView()'>
+                  <!-- {{showForm ? 'CANCEL' : 'NEW'}} -->
+                  NEW
+              </button>
+          </div>
+         
+  </div>
+  </div>
+  
+  <form *ngIf='showForm' (submit)="onSubmit()" class='myForm'>
+          <input type="submit" class="btn btn-primary" value="ADD">
+          <button id="btnCancel" class="btn btn-default" (click)='toggleView()' >CANCEL</button>
+  <div class="form-group">
+      <br/>
+      <div class="margin-bottom-20">
+          <label for="date" style="width:150px;">DATE</label>
+          <!-- <input required [(ngModel)]="date" name="date" class="form-control"  type="date" id="date" style="width:300px;"> -->
+          <input required [(ngModel)]="date" min={{today}} name="date" class="form-control"  type="date" id="date" style="width:300px;">
+      </div>
+  </div>
+  
+   <div class="form-group">
+      <div class="margin-bottom-20">
+          <label for="time" style="width:150px;">TIME</label>
+          <input [(ngModel)]="time" name="time" class="form-control" type="time" id="time" style="width:300px;">
+      </div>
+   </div>
+  
+   <div class="form-group">
+     <!-- <div class="row"> -->
+        <label for="description" style="margin-left:10px;width:150px;">DESCRIPTION </label>
+        <textarea [(ngModel)]='desc' name="desc" class="form-control" id="desc" cols="02" rows="05" class="form-control" style="width:300px;margin-left:5px"></textarea>
+     <!-- </div> -->
+    </div>
+    
+  </form>
+  
